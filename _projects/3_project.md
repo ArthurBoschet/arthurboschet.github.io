@@ -11,6 +11,15 @@ SpotiBCI was a course project for <a href="https://www.mcgill.ca/study/2020-2021
 
 To change the song, the user can imagine moving their left or right hand. This produces an acute desychronization of electrical oscillations in the alpha frequency band (8-13 Hz). This is called an event-related desynchronization (ERD). We visualized this effect using motor imagery data from the 4th Berlin BCI Competition (Dataset 2b) on an ideal subject. This is a normalized time-frequency decomposition using Morlet wavelets.
 
+<div class="row text-center">
+    <div class="col-sm mt-3 mt-md-0">
+        {% responsive_image path: assets/img/time-f.png title: "example image" class: "img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Exemple of time-frequency image features resulting from right hand motor imagery. A decrease of power in the alpha frequency band can be observed.
+</div>
+
 As such, to recognize this event, we trained a <b>convolutional neural network</b> (CNN) on time-frequency images, similar to the one shown above. Using leave-one-subject-out cross-validation, we reached a validation accuracy of <b>0.655 +/- 0.122</b> across all subjectes, reaching as high as <b>0.881</b> on an individual, held-out subject.
 
 To make the system more usable, we used jaw clenches as a control signal. If the user wants to change the song, they would clench their jaw. Subsequently, if they keep their jaw clenched, then this toggles pause/play. Otherwise, the system will go to the next or previous song depending on the output of the CNN.
@@ -23,11 +32,3 @@ These models were then integrated with a real-time data stream from the Cyton vi
 
 For more details, check out the <a href="https://arthurboschet.github.io/assets/pdf/spotibci.pdf">project report</a>.
 
-<div class="row text-center">
-    <div class="col-sm mt-3 mt-md-0">
-        {% responsive_image path: assets/img/time-f.png title: "example image" class: "img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    
-</div>
