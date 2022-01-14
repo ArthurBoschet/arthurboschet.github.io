@@ -18,4 +18,4 @@ social: true  # includes social icons at the bottom of the page
 ---
 
 I am a student at McGill university, originally from Paris, France, completing my final year of Bioengineering with a minor in Computer Science. I have a special interest in the use of computer science and datascience to tackle modern problems in medecine and biology and hope to maximize my contributions in the field! 
-Outside of my work, I enjoy surfing, lifting weights and trying new restaurants. My favourite cuisine is Lebanese (try Boustan if you're ever in Montreal!)
+Outside of my work, I enjoy surfing, lifting weights and trying new restaurants. 
