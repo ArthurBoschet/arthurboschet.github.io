@@ -12,10 +12,9 @@ This is a simple game coded in vanilla javascript on the html5 canvas. This game
 
 <html>
 <head><meta charset="utf-8" />
-    <link rel="stylesheet" href="{{ '/public/css/app.css' | absolute_url }}">
 </head>
 <body>
-    <div class="video-container .container">
+    <div class="video-container">
         <iframe src="https://brickbreaker-377519.uc.r.appspot.com" width="100%" height="400"  allowfullscreen="" frameborder="0">
         </iframe>
     </div>
