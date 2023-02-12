@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-description: <a href="https://www.mcgill.ca/bioengineering/">Department of Bioengineering at McGill University</a> 
+description: <a href="https://mila.quebec/en/professional-programs/">Professional Master’s Degree in Machine Learning</a> 
 
 profile:
   align: right
@@ -17,5 +17,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am a student at McGill university, originally from Paris, France, completing my final year of Bioengineering with a minor in Computer Science. I have a special interest in the use of computer science and datascience to tackle modern problems in medecine and biology and hope to maximize my contributions in the field! 
-Outside of my work, I enjoy surfing, lifting weights and trying new restaurants. 
+I am a professional master’s student in Machine Learning at the Université de Montréal, holding a bachelor's degree in Bioengineering with a minor in Computer Science from McGill University. I am very passionate about the applications of Deep Learning to tackle modern problems in medecine and biology. I am currently working on the use of Graph Neural Networks to predict protein interactions and help biologists discover new cellular pathways. I also have experience with other medical and public health use cases such as motor imagery EEG-based systems, Covid related instagram sentiment analysis and the development of an intelligent surgical drain. 
+
+
+<!-- I have also previoulsy worked on EEG-based systems to aid individuals with motor disabilities (such as ALS or locked-in syndrome) interact with electronic devices. Additionally, I have professional experience  with Outside of my work, I enjoy surfing, lifting weights and trying new restaurants.  -->
