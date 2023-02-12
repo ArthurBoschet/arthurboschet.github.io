@@ -3,7 +3,7 @@ layout: page
 title: SpotiBCI
 description: Mind-control media player
 img: assets/img/spotipy.png
-importance: 2
+importance: 3
 category: fun
 ---
 

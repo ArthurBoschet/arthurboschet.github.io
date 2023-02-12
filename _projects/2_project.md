@@ -3,7 +3,7 @@ layout: page
 title: COVID-19 Instagram Analyzer
 description: Social media analysis pipeline
 img: assets/img/centrality_network.png
-importance: 1
+importance: 2
 category: fun
 ---
 
