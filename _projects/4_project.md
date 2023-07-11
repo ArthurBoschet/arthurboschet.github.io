@@ -3,7 +3,7 @@ layout: page
 title: PPIPrediction
 description: Protein-Protein Interaction Prediction Pipeline
 img: assets/img/interactome.png
-importance: 1
+importance: 2
 category: fun
 ---
 
