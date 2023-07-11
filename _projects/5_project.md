@@ -7,7 +7,7 @@ importance: 1
 category: fun
 ---
 
-This study medical image segmentation of CT and MRI scans is course project for <a href="https://alexhernandezgarcia.github.io/teaching/mlprojects23/">IFT 3710/6759 H23 - Projets (avancés) en apprentissage automatique</a>.
+This study focuses on the medical image segmentation of CT and MRI scans and serves as a course project for <a href="https://alexhernandezgarcia.github.io/teaching/mlprojects23/">IFT 3710/6759 H23 - Projets (avancés) en apprentissage automatique</a>. It was conducted in collaboration with my classmates, <a href="https://github.com/clem2507">Clement Detry</a> and <a href="https://github.com/fregagne">Frederic Gagne</a>.
 
 Medical image segmentation is a critical application in computer vision, providing an alternative to time-consuming and crucial tasks performed by clinicians. The U-net architecture is widely used in this field and has served as the foundation for newer architectures like Swin-UNETR, which incorporates Swin transformers blocks to achieve state-of-the-art results. Various researchers have proposed different implementations using diverse convolutional blocks or modifications to the shortcut path between the encoder and decoder. 
 
