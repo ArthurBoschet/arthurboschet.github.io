@@ -7,9 +7,9 @@ description: <a href="https://optinadx.com">AI Research Scientist @ Optina Diagn
 profile:
   align: right
   image: portrait_arthur.png
-  address: >
-    <p>1100 Avenue du Docteur-Penfield</p>
-    <p>H3A 1A8 Montréal, Québec</p>
+  # address: >
+  #   <p>1100 Avenue du Docteur-Penfield</p>
+  #   <p>H3A 1A8 Montréal, Québec</p>
 
 news: true  # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
