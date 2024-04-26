@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-description: <a href="https://mila.quebec/en/professional-programs/">Master’s Student at Université de Montréal</a> 
+description: <a href="https://optinadx.com">AI Research Scientist @ Optina Diagnostics</a> 
 
 profile:
   align: right
