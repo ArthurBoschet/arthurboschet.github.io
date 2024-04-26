@@ -22,7 +22,7 @@ However, comparing the effectiveness of these architectural choices can be chall
     UNet prediction on a validation image of the MISD heart segmentation dataset.
 </div>
 
-Through a 5-fold cross-validation analysis on the heart and lung datasets, we discovered that adding convolutional layers to the shortcut path showed promise as a design modification, although it did not reach statistical significance. Subsequently, we evaluated this modified model, along with the U-net baseline and Swin-UNETR, on all datasets, and found that it achieved the best overall performance, with an average rank of 1.59 across all tasks. 
+Through a 5-fold cross-validation analysis on the heart and lung datasets, we found that adding convolutional layers to the shortcut path showed promise as a design modification, although it did not reach statistical significance. Subsequently, we evaluated this modified model, along with the U-net baseline and Swin-UNETR, on all datasets, and found that it achieved the best overall performance, with an average rank of 1.59 across all tasks. 
 
 <div class="row text-center">
     <div class="col-sm mt-3 mt-md-0">
@@ -51,6 +51,6 @@ Through a 5-fold cross-validation analysis on the heart and lung datasets, we di
     The performance of three models, U-net, Swin-UNETR, and Conv-skip, on all test sets in the Medical Segmentation Decathlon is presented. The metric used to evaluate the models is the dice score, and the results are tabulated. The average rank of each model is reported to enable a comprehensive comparison of their performance.
 </div>
 
-Transformers-based models did not perform as well as convolution-based ones. It is assumed that preprocessing and data augmentation may have a crucial role in the performance reported in existing literature, and further studies incorporating these factors could help bridge the gap between our study and the existing body of work.
+Transformers-based models did not perform as well as convolution-based ones. It is assumed that preprocessing and aggressive data augmentation may have a crucial role in the performance reported in existing literature, and further studies incorporating these factors could help bridge the gap between our study and the existing body of work.
 
 For more details, check out the <a href="https://arthurboschet.github.io/assets/pdf/MedicalSegmentationReport.pdf">project report</a> and the code in our <a href="https://github.com/ArthurBoschet/medical_segmentation"> repository </a>.

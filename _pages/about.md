@@ -11,11 +11,15 @@ profile:
     <p>1100 Avenue du Docteur-Penfield</p>
     <p>H3A 1A8 Montréal, Québec</p>
 
-news: false  # includes a list of news items
+news: true  # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am a professional Master's student in Machine Learning at Université de Montréal, currently doing a research internship at <a href="https://mila.quebec/en/professional-programs/">Optina Diagnostics</a> under the supervision of Prof. Ioannis Mitliagkas and Jean-Sébastien Grondin. I am working on the generation of synthetic medical images via diffusion and VQ-GANs to enhance a self-supervised learning pipeline used for the classification of Amyloid-β, whose aggregation is associated with Alzheimer's disease.
+Welcome to my website! I am an Applied AI Research Scientist at Optina Diagnostics, specializing in harnessing the latest advancements in deep learning and computer vision. My work focuses on developing innovative tools for optometrists, ophthalmologists, and the diagnosis of Alzheimer's disease. During my professional Master's program at Mila, I completed a research internship at Optina Diagnostics, mentored by [Jean-Sébastien Grondin](https://www.linkedin.com/in/jsgrondin) and [Adam Ibrahim](https://www.adamibrahim.fr/). My primary project involved the generation of high-resolution hyperspectral retinal images using diffusion models and VQ-GANs, enhancing a self-supervised learning pipeline.
 
-I hold a Bachelor's degree in Bioengineering with a minor in Computer Science from McGill University. I am deeply passionate about leveraging the power of Deep Learning to tackle modern problems in medicine and biology. I have worked on various medical use cases such as CT and MRI scan segmentation with UNet architectures, the use of Graph Neural Networks to predict protein-protein interactions, motor imagery EEG-based systems, sentiment analysis of Instagram posts related to Covid, and the creation of an intelligent surgical drain.
+I am currently completing a research internship at [NeuroPoly](https://neuro.polymtl.ca/), guided by [Julien Cohen-Adad](https://scholar.google.ca/citations?user=6cAZ028AAAAJ&hl=en/), where I am developing segmentation models for axons and myelin in nervous system histology images. Alongside this, I am actively involved in creating a pipeline that utilizes diffusion models to improve the segmentation of out-of-distribution images.
+
+Prior to these experiences, I earned a Bachelor's degree in Bioengineering with a minor in Computer Science from McGill University. During my undergraduate studies, I engaged in various projects, including the development of motor imagery EEG-based systems, analyzing sentiment in Instagram posts related to Covid, and designing an intelligent surgical drain system.
+
+

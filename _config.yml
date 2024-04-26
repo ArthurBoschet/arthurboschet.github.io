@@ -6,7 +6,7 @@ title: blank # the website title (if blank, full name will be used instead)
 first_name: Arthur
 middle_name:
 last_name: Boschet
-email: arthur.boschet@mila.quebec
+email: arthur.boschet@umontreal.ca
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   A simple, whitespace  theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 footer_text: >
@@ -185,8 +185,8 @@ jekyll-archives:
 
 scholar:
 
-  last_name: Einstein
-  first_name: [Albert, A.]
+  last_name: Boschet
+  first_name: [Arthur]
 
   style: apa
   locale: en
@@ -194,6 +194,16 @@ scholar:
   source: /_bibliography/
   bibliography: papers.bib
   bibliography_template: bib
+  # bibliography_template: >-
+  #   {% reference %}
+  #   {% if entry.title %}<i>{{ entry.title }}</i>{% endif %}
+  #   {% if entry.author %}{{ entry.author }}{% endif %}
+  #   {% if entry.journal %}, {{ entry.journal }}{% endif %}
+  #   {% if entry.volume %}, {{ entry.volume }}{% endif %}
+  #   {% if entry.issue %}, {{ entry.issue }}{% endif %}
+  #   {% if entry.pages %}, {{ entry.pages }}{% endif %}
+  #   {% if entry.year %}, {{ entry.year }}{% endif %}
+  #   {% if entry.note %}, {{ entry.note }}{% endif %}
   # Note: if you have latex math in your bibtex, the latex filter
   # preprocessing may conflict with MathJAX if the latter is enabled.
   # See https://github.com/alshedivat/al-folio/issues/357.

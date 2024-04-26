@@ -3,7 +3,7 @@ layout: page
 title: BrickBreaker
 description: Fun javascript game!
 img: assets/img/bb1.png
-importance: 4
+importance: 5
 category: fun
 ---
 
