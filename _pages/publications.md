@@ -3,8 +3,8 @@ layout: page
 permalink: /publications/
 title: Publications
 description: 
-years: [2024,2021] #[1956, 1950, 1935, 1905]
-nav: false
+years: [2024,2022] #[1956, 1950, 1935, 1905]
+nav: true
 ---
 
 <div class="publications">
