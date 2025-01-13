@@ -2,7 +2,7 @@
 <html lang="en">
 
   <head>
-    <meta http-equiv="refresh" content="3; url=https://arthurboschet.github.io/" />
+    
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,7 @@
   Arthur  Boschet
 
 
-  | Page not found
+  | SpotiBCI
 
 </title>
 <meta name="description" content="Personal website of Arthur Boschet, an Applied AI Research Scientist advancing medical diagnostics through deep learning and computer vision technologies.
@@ -38,7 +38,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
 
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="https://arthurboschet.github.io/404.html">
+<link rel="canonical" href="https://arthurboschet.github.io/projects/spotibci/">
 
 
 <!-- Dark Mode -->
@@ -144,12 +144,42 @@
       <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Page not found</h1>
-    <p class="post-description">Looks like there has been a mistake. Nothing exists here.</p>
+    <h1 class="post-title">SpotiBCI</h1>
+    <p class="post-description">Mind-control media player</p>
   </header>
 
   <article>
-    <p>You will be redirected to the main page within 3 seconds. If not redirected, please click <a href="https://arthurboschet.github.io/">here</a>.</p>
+    <p>SpotiBCI was a course project for <a href="https://www.mcgill.ca/study/2020-2021/courses/bien-462" target="_blank" rel="noopener noreferrer">BIEN 462: Engineering Principles in Physiological Systems</a>. My classmate and I designed a system for controlling Spotify playback (next/previous/pause) using <b>motor imagery</b> and <b>jaw clenches</b> detected from EEG. This type of technology is highly relevant for individuals with ALS or locked-in syndome who are unable to interact with media in standard ways.</p>
+
+<p>To change the song, the user can imagine moving their left or right hand. This produces an acute desychronization of electrical oscillations in the alpha frequency band (8-13 Hz). This is called an event-related desynchronization (ERD). We visualized this effect using motor imagery data from the 4th Berlin BCI Competition (Dataset 2b) on an ideal subject. This is a normalized time-frequency decomposition using Morlet wavelets.</p>
+
+<div class="row text-center">
+    <div class="col-sm mt-3 mt-md-0">
+        <picture>
+    
+    <source media="(max-width: 480px)" srcset="/assets/resized/time-f-480x360.png"></source>
+    
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/time-f.png" title="example image">
+</picture>
+
+    </div>
+</div>
+<div class="caption">
+    Exemple of time-frequency image features resulting from right hand motor imagery. A decrease of power in the alpha frequency band can be observed.
+</div>
+
+<p>As such, to recognize this event, we trained a <b>convolutional neural network</b> (CNN) on time-frequency images, similar to the one shown above. Using leave-one-subject-out cross-validation, we reached a validation accuracy of <b>0.655 +/- 0.122</b> across all subjectes, reaching as high as <b>0.881</b> on an individual, held-out subject.</p>
+
+<p>To make the system more usable, we used jaw clenches as a control signal. If the user wants to change the song, they would clench their jaw. Subsequently, if they keep their jaw clenched, then this toggles pause/play. Otherwise, the system will go to the next or previous song depending on the output of the CNN.</p>
+
+<p>To recognize jaw clenches, we recorded a toy dataset using the OpenBCI Cyton.</p>
+
+<p>We recorded 100 jaw clenches and 100 resting segments, and fed alpha, theta, and beta bandpower into a <b>logistic regression classifier</b>. This reached a 10-fold cross-validation accuracy of <b>0.9850 +/- 0.0014</b>.</p>
+
+<p>These models were then integrated with a real-time data stream from the Cyton via LSL, and with the Spotify API for playback control. A demo can be seen <a href="https://www.youtube.com/watch?v=4_M3x-Q__Q8" target="_blank" rel="noopener noreferrer">here</a>.</p>
+
+<p>For more details, check out the <a href="https://arthurboschet.github.io/assets/pdf/spotibci.pdf">project report</a>.</p>
+
 
   </article>
 

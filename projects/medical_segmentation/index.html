@@ -2,7 +2,7 @@
 <html lang="en">
 
   <head>
-    <meta http-equiv="refresh" content="3; url=https://arthurboschet.github.io/" />
+    
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,7 @@
   Arthur  Boschet
 
 
-  | Page not found
+  | Medical Segmentation
 
 </title>
 <meta name="description" content="Personal website of Arthur Boschet, an Applied AI Research Scientist advancing medical diagnostics through deep learning and computer vision technologies.
@@ -38,7 +38,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
 
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="https://arthurboschet.github.io/404.html">
+<link rel="canonical" href="https://arthurboschet.github.io/projects/medical_segmentation/">
 
 
 <!-- Dark Mode -->
@@ -144,12 +144,88 @@
       <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Page not found</h1>
-    <p class="post-description">Looks like there has been a mistake. Nothing exists here.</p>
+    <h1 class="post-title">Medical Segmentation</h1>
+    <p class="post-description">Medical image segmentation with UNet architectures</p>
   </header>
 
   <article>
-    <p>You will be redirected to the main page within 3 seconds. If not redirected, please click <a href="https://arthurboschet.github.io/">here</a>.</p>
+    <p>This study focuses on the medical image segmentation of CT and MRI scans and serves as a course project for <a href="https://alexhernandezgarcia.github.io/teaching/mlprojects23/" target="_blank" rel="noopener noreferrer">IFT 3710/6759 H23 - Projets (avancés) en apprentissage automatique</a>. It was conducted in collaboration with my classmates, <a href="https://github.com/clem2507" target="_blank" rel="noopener noreferrer">Clement Detry</a> and <a href="https://github.com/fregagne" target="_blank" rel="noopener noreferrer">Frederic Gagne</a>.</p>
+
+<p>Medical image segmentation is a critical application in computer vision, providing an alternative to time-consuming and crucial tasks performed by clinicians. The U-net architecture is widely used in this field and has served as the foundation for newer architectures like Swin-UNETR, which incorporates Swin transformers blocks to achieve state-of-the-art results. Various researchers have proposed different implementations using diverse convolutional blocks or modifications to the shortcut path between the encoder and decoder.</p>
+
+<p>However, comparing the effectiveness of these architectural choices can be challenging due to variations in preprocessing steps and pipeline optimizations adopted by different research teams to enhance their results. Hence, this study aims to compare proposed architectural modifications against a U-net baseline, using fixed hyper-parameters, to provide meaningful comparisons on the <a href="http://medicaldecathlon.com/" target="_blank" rel="noopener noreferrer">Medical Image Segmentation Decathlon datasets</a><a> (MISD).</a></p>
+
+<div class="row text-center">
+    <div class="col-sm mt-3 mt-md-0">
+        <picture>
+    
+    <source media="(max-width: 480px)" srcset="/assets/resized/UNet_inference-480x240.gif"></source>
+    
+    <source media="(max-width: 800px)" srcset="/assets/resized/UNet_inference-800x400.gif"></source>
+    
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/UNet_inference.gif" title="example image">
+</picture>
+
+    </div>
+</div>
+<div class="caption">
+    UNet prediction on a validation image of the MISD heart segmentation dataset.
+</div>
+
+<p>Through a 5-fold cross-validation analysis on the heart and lung datasets, we found that adding convolutional layers to the shortcut path showed promise as a design modification, although it did not reach statistical significance. Subsequently, we evaluated this modified model, along with the U-net baseline and Swin-UNETR, on all datasets, and found that it achieved the best overall performance, with an average rank of 1.59 across all tasks.</p>
+
+<div class="row text-center">
+    <div class="col-sm mt-3 mt-md-0">
+        <picture>
+    
+    <source media="(max-width: 480px)" srcset="/assets/resized/foldwise-480x212.png"></source>
+    
+    <source media="(max-width: 800px)" srcset="/assets/resized/foldwise-800x354.png"></source>
+    
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/foldwise.png" title="example image">
+</picture>
+
+    </div>
+</div>
+<div class="caption">
+    Foreground dice fold-wise difference with the U-net baseline. To evaluate the performance of various models, we calculated the foreground Dice score difference compared to the U-net baseline using a fold-wise approach. Specifically, we subtracted the training and validation foreground Dice scores of each fold of the U-net baseline model from the corresponding folds of the models under investigation, including Swin-UNETR, Half-Unet, U-net with Resblock 2, Trans-Unet, Unet-Conv-Skip, and Unet-Conv-Skip-Res2. We utilized a bootstrapping methodology to estimate the mean distribution used to compute the two-tailed p-values.
+</div>
+
+<div class="row text-center">
+    <div class="col-sm mt-3 mt-md-0">
+        <picture>
+    
+    <source media="(max-width: 480px)" srcset="/assets/resized/results_table_medical_seg-480x144.png"></source>
+    
+    <source media="(max-width: 800px)" srcset="/assets/resized/results_table_medical_seg-800x241.png"></source>
+    
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/results_table_medical_seg.png" title="example image">
+</picture>
+
+    </div>
+</div>
+<div class="caption">
+    This table presents the outcomes of the 5-fold cross-validation study on different models trained on both heart and lung datasets. The presented results are based on foreground dice scores, which refer to the heart class for the heart dataset and the tumor class for the lung dataset. FWD corresponds to the fold-wise difference with the U-net baseline, and the p-values indicate the probability of observing the 5-fold dice score under the U-net score distribution.
+</div>
+
+<div class="row text-center">
+    <div class="col-sm mt-3 mt-md-0">
+        <picture>
+    
+    <source media="(max-width: 480px)" srcset="/assets/resized/table_all_datasets-480x276.png"></source>
+    
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/table_all_datasets.png" title="example image">
+</picture>
+
+    </div>
+</div>
+<div class="caption">
+    The performance of three models, U-net, Swin-UNETR, and Conv-skip, on all test sets in the Medical Segmentation Decathlon is presented. The metric used to evaluate the models is the dice score, and the results are tabulated. The average rank of each model is reported to enable a comprehensive comparison of their performance.
+</div>
+
+<p>Transformers-based models did not perform as well as convolution-based ones. It is assumed that preprocessing and aggressive data augmentation may have a crucial role in the performance reported in existing literature, and further studies incorporating these factors could help bridge the gap between our study and the existing body of work.</p>
+
+<p>For more details, check out the <a href="https://arthurboschet.github.io/assets/pdf/MedicalSegmentationReport.pdf">project report</a> and the code in our <a href="https://github.com/ArthurBoschet/medical_segmentation" target="_blank" rel="noopener noreferrer"> repository </a>.</p>
 
   </article>
 

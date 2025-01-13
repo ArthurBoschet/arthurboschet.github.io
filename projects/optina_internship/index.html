@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>
+
+  Arthur  Boschet
+
+
+  | Retinal Image Generation
+
+</title>
+<meta name="description" content="Personal website of Arthur Boschet, an Applied AI Research Scientist advancing medical diagnostics through deep learning and computer vision technologies.
+">
+
+<!-- Open Graph -->
+
+
+<!-- Bootstrap & MDB -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" integrity="sha512-RO38pBRxYH3SoOprtPTD86JFOclM51/XTIdEPh5j8sj4tp8jmQIx26twG52UaLi//hQldfrh7e51WzP9wuP32Q==" crossorigin="anonymous" />
+
+<!-- Fonts & Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"  integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+<!-- Code Syntax Highlighting -->
+<link rel="stylesheet" href="https://combinatronics.io/jwarby/pygments-css/master/.css" media="none" id="highlight_theme_light" />
+
+<!-- Styles -->
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="canonical" href="https://arthurboschet.github.io/projects/optina_internship/">
+
+
+<!-- Dark Mode -->
+<script src="/assets/js/theme.js"></script>
+<script src="/assets/js/dark_mode.js"></script>
+
+
+  </head>
+
+  <body class="fixed-top-nav ">
+
+    <!-- Header -->
+
+    <header>
+
+    <!-- Nav Bar -->
+    <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+    <div class="container">
+      
+      <a class="navbar-brand title font-weight-lighter" href="https://arthurboschet.github.io/">
+       <span class="font-weight-bold">Arthur</span>   Boschet
+      </a>
+      
+      <!-- Navbar Toggle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <!-- About -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/">
+              About
+              
+            </a>
+          </li>
+          
+          <!-- Other pages -->
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/publications/">
+                Patents &amp; Publications
+                
+              </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/projects/">
+                Projects
+                
+              </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+            <div class="toggle-container">
+              <a id="light-toggle">
+                  <i class="fas fa-moon"></i>
+                  <i class="fas fa-sun"></i>
+              </a>
+            </div>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+
+    <!-- Content -->
+
+    <div class="container mt-5">
+      <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Retinal Image Generation</h1>
+    <p class="post-description">Synthetic retinal image generation via latent diffusion models</p>
+  </header>
+
+  <article>
+    <p>During my internship at Optina Diagnostics, I focused on generating synthetic hyperspectral retinal images to enhance a self-supervised learning (SSL) framework aimed at improving the classification of amyloid-β—an important biomarker for Alzheimer’s disease. Crucially, these synthetic images were unlabeled and therefore served exclusively for pretraining in the SSL pipeline, where they could help the model learn robust feature representations without relying on labeled datasets.</p>
+
+<h3 id="technical-overview">Technical Overview</h3>
+
+<p>This project harnessed Latent Diffusion Models (LDMs) adapted from the <a href="https://github.com/FirasGit/medicaldiffusion" target="_blank" rel="noopener noreferrer">Medical Diffusion</a> work by Khader et al. The initial setup generated 224×224-pixel images across 16 spectral bands. Constrained by available computational resources, these lower-resolution images allowed rapid experimentation on various architectures. Subsequently, the approach was scaled to 672×672-pixel images while retaining 16 spectral bands, to refine the model’s performance at higher resolutions.</p>
+
+<h3 id="methodology">Methodology</h3>
+
+<h4 id="image-generation">Image Generation</h4>
+<p>The LDM framework underpins the image generation process. First, an autoencoder—specifically, a Vector Quantized Generative Adversarial Network (VQ-GAN)—compresses the input images into a latent space and then reconstructs them back to the original dimensions. A diffusion model operates within this latent representation, after which the decoder transforms the latent vectors back into full-resolution images. In earlier trials, VQ-VAEs were evaluated, but VQ-GAN demonstrated superior preservation of structural details and image fidelity.</p>
+
+<p>To speed up training convergence, K-Means clustering was employed at the start of each epoch to initialize the VQ-GAN’s codebook. By using cluster centroids derived from the training data, this initialization process helped the codebook adapt more efficiently to the data’s latent distribution.</p>
+
+<div class="row text-center">
+    <div class="col-sm mt-3 mt-md-0">
+        <picture>
+    
+    <source media="(max-width: 480px)" srcset="/assets/resized/architecture_LDM-480x360.png"></source>
+    
+    <source media="(max-width: 800px)" srcset="/assets/resized/architecture_LDM-800x600.png"></source>
+    
+    <source media="(max-width: 1400px)" srcset="/assets/resized/architecture_LDM-1400x1050.png"></source>
+    
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/architecture_LDM.png" title="example image">
+</picture>
+
+    </div>
+</div>
+<div class="caption">
+    Architecture of the LDM used for generating synthetic hyperspectral images.
+</div>
+
+<h4 id="quality-and-diversity-assessment">Quality and Diversity Assessment</h4>
+<p>Multiple metrics were employed to confirm the usability and uniqueness of the generated images:</p>
+<ul>
+  <li>
+<strong>Spatial Quality</strong>: A specialized hyperspectral Fréchet Inception Distance (FID) score measured the distance between real and generated image feature distributions.</li>
+  <li>
+<strong>Spectral Quality</strong>: Kullback-Leibler divergence was evaluated for key ocular structures (e.g., veins, arteries, ONH) to ensure accurate spectral reproduction.</li>
+  <li>
+<strong>Image Diversity</strong>: Multi-Scale Structural Similarity (MS-SSIM) gauged the perceptual variability among generated images.</li>
+  <li>
+<strong>Authenticity</strong>: Nearest-neighbor analysis in the training set verified that the synthetic images remained distinct from real training samples, preventing duplication while preserving realism.</li>
+</ul>
+
+<h3 id="results">Results</h3>
+
+<div class="row text-center">
+    <div class="col-sm mt-3 mt-md-0">
+        <picture>
+    
+    <source media="(max-width: 480px)" srcset="/assets/resized/224x224x16_results_LDM-480x319.png"></source>
+    
+    <source media="(max-width: 800px)" srcset="/assets/resized/224x224x16_results_LDM-800x531.png"></source>
+    
+    <source media="(max-width: 1400px)" srcset="/assets/resized/224x224x16_results_LDM-1400x929.png"></source>
+    
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/224x224x16_results_LDM.png" title="example image">
+</picture>
+
+    </div>
+</div>
+<div class="caption">
+    Results of the LDM experiments for 224×224×16 resolution, performed on an NVIDIA A40 GPU. This resolution was selected to facilitate faster training and thorough experimentation.
+</div>
+
+<p>Preliminary experiments at 224×224×16 resolution involved testing multiple configurations of the autoencoder and diffusion components. The figure above displays five plots tracking Hyperspectral FID, the absolute difference between validation and synthetic MS-SSIM, and Spectral KL-Divergence (covering veins, arteries, and the ONH), all measured against sampling speed on an NVIDIA A40 GPU. I utilized a VQ-GAN with a1024-vector codebook, alongside a three-level Diffusion U-Net. The configurations explored various latent space compression factors (16, 8, 4), latent channels (8, 32, 256), and base channels (128, 256, 512) in the diffusion network. A Pareto front highlighted a trade-off between sampling speed and both spectral and spatial quality. Although models using 512 base channels in a U-Net with a compression factor of 8 achieved higher quality, additional gains were modest and diminished sampling efficiency. Furthermore, these high-capacity settings showed superior diversity, and changes to the codebook dimension yielded minimal impact. An optimal balance for upscaling emerged from a configuration featuring a compression factor of 8, 8 latent channels, and a 512-channel U-Net.</p>
+
+<p>Following these experiments, the model was scaled to a resolution of 672×672×16. The figure below displays representative synthetic images across eight wavelengths (900 nm, 815 nm, 730 nm, 640 nm, 555 nm, and 465 nm), showcasing realism almost indistinguishable from real images.</p>
+
+<div class="row text-center">
+    <div class="col-sm mt-3 mt-md-0">
+        <picture>
+    
+    <source media="(max-width: 480px)" srcset="/assets/resized/synthetic_hyperspectral-480x537.png"></source>
+    
+    <source media="(max-width: 800px)" srcset="/assets/resized/synthetic_hyperspectral-800x895.png"></source>
+    
+    <source media="(max-width: 1400px)" srcset="/assets/resized/synthetic_hyperspectral-1400x1566.png"></source>
+    
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/synthetic_hyperspectral.png" title="example image">
+</picture>
+
+    </div>
+</div>
+<div class="caption">
+    Example of synthetic hyperspectral images generated by the optimal model at 672×672×16 resolution.
+</div>
+
+<div class="row text-center">
+    <div class="col-sm mt-3 mt-md-0">
+        <picture>
+    
+    <source media="(max-width: 480px)" srcset="/assets/resized/hyperspectral_image_eg-480x480.gif"></source>
+    
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/hyperspectral_image_eg.gif" title="example image">
+</picture>
+
+    </div>
+</div>
+<div class="caption">
+    Example of a synthetic hyperspectral image generated by the optimal model at 672×672×16 resolution.
+</div>
+
+<h3 id="impact-and-future-work">Impact and Future Work</h3>
+
+<p>This initiative broadens Optina’s ability to utilize unlabeled synthetic data for self-supervised learning. Although the direct effect on amyloid-β classification is still under investigation, the high fidelity of the synthetic images presents promising avenues for enhancing classification pipelines. Going forward, these synthetic images will be integrated into Optina’s operational SSL workflows, providing additional unlabeled data for representation learning and potentially boosting downstream model accuracy for amyloid-β detection.</p>
+
+<p>For a deeper dive into the technical details and findings, please consult the associated internship <a href="https://arthurboschet.github.io/assets/pdf/Generating_Hyperspectral_Retinal_Images_with_Latent_Diffusion_Models_FINAL.pdf">technical report</a>.</p>
+
+  </article>
+
+</div>
+
+    </div>
+
+    <!-- Footer -->
+
+    
+<footer class="fixed-bottom">
+  <div class="container mt-0">
+    © Copyright 2025 Arthur  Boschet.
+    Powered by <a href="http://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener noreferrer">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a>.
+
+    
+    
+  </div>
+</footer>
+
+
+
+  </body>
+
+  <!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+  <!-- Bootsrap & MDB scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" integrity="sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A==" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js" integrity="sha512-Mug9KHKmroQFMLm93zGrjhibM2z2Obg9l6qFG2qKjXEXkMp/VDkI4uju9m4QKPjWSwQ6O2qzZEnJDEeCw0Blcw==" crossorigin="anonymous"></script>
+
+  
+<!-- Mansory & imagesLoaded -->
+<script defer src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script defer src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script defer src="/assets/js/mansory.js" type="text/javascript"></script>
+
+
+  
+
+
+<!-- Medium Zoom JS -->
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+<script src="/assets/js/zoom.js"></script>
+
+
+<!-- Load Common JS -->
+<script src="/assets/js/common.js"></script>
+
+  
+<!-- MathJax -->
+<script type="text/javascript">
+  window.MathJax = {
+    tex: {
+      tags: 'ams'
+    }
+  };
+</script>
+<script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+
+
+  
+
+
+
+
+
+</html>

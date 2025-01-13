@@ -2,7 +2,7 @@
 <html lang="en">
 
   <head>
-    <meta http-equiv="refresh" content="3; url=https://arthurboschet.github.io/" />
+    
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,7 @@
   Arthur  Boschet
 
 
-  | Page not found
+  | Unpaired Medical Image Translation
 
 </title>
 <meta name="description" content="Personal website of Arthur Boschet, an Applied AI Research Scientist advancing medical diagnostics through deep learning and computer vision technologies.
@@ -38,7 +38,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
 
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="https://arthurboschet.github.io/404.html">
+<link rel="canonical" href="https://arthurboschet.github.io/projects/modality_translation/">
 
 
 <!-- Dark Mode -->
@@ -144,12 +144,95 @@
       <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Page not found</h1>
-    <p class="post-description">Looks like there has been a mistake. Nothing exists here.</p>
+    <h1 class="post-title">Unpaired Medical Image Translation</h1>
+    <p class="post-description">Medical image translation with adversarial diffusion models for pseudo labeling</p>
   </header>
 
   <article>
-    <p>You will be redirected to the main page within 3 seconds. If not redirected, please click <a href="https://arthurboschet.github.io/">here</a>.</p>
+    <p>Presented at the MICCAI 2024 workshop on deep generative models, our paper <a href="https://link.springer.com/chapter/10.1007/978-3-031-72744-3_6" target="_blank" rel="noopener noreferrer">Unpaired Modality Translation for Pseudo Labeling of Histology Images</a>  was developed during a research internship with <a href="https://mila.quebec/fr/annuaire/julien-cohen-adad" target="_blank" rel="noopener noreferrer">Julien Cohen-Adad</a> at the <a href="https://neuro.polymtl.ca/" target="_blank" rel="noopener noreferrer">NeuroPoly Lab</a> from October 2023 to April 2024. This paper addresses the critical challenge of data scarcity in medical segmentation tasks, which is especially acute in histology imaging where researchers often have annotated data in one modality but lack it in another that is of interest. Our approach introduces a novel way to generate annotations in the target modality using existing labeled data, thus bridging this gap.</p>
+
+<h3 id="methods">Methods</h3>
+
+<p>Our methodology leverages the adversarial diffusion model, SynDiff, for unsupervised image translation, enabling the generation of pseudo labels without prior annotations in the target domain. We propose two pseudo labeling strategies to facilitate this translation:</p>
+<ol>
+  <li>
+<strong>Tutorship</strong>: This strategy involves training a proxy segmentation model on synthetic data derived from translating labeled images from one modality (e.g. TEM) to an unlabeled target modality (e.g. SEM).</li>
+  <li>
+<strong>Adaptation</strong>: This strategy converts unlabeled images to match the labeled data distribution, thereby enabling segmentation with a pre-trained model.</li>
+</ol>
+
+<div class="row text-center">
+    <div class="col-sm mt-3 mt-md-0">
+        <picture>
+    
+    <source media="(max-width: 480px)" srcset="/assets/resized/adaptation_tutorship-480x176.png"></source>
+    
+    <source media="(max-width: 800px)" srcset="/assets/resized/adaptation_tutorship-800x293.png"></source>
+    
+    <source media="(max-width: 1400px)" srcset="/assets/resized/adaptation_tutorship-1400x512.png"></source>
+    
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/adaptation_tutorship.png" title="example image">
+</picture>
+
+    </div>
+</div>
+<div class="caption">
+    Overview of the two pseudo labeling strategies using TEM as the labeled dataset and SEM as the unlabeled data. (Top) The Tutorship strategy involves generating a synthetic dataset by translating labeled TEM images and training a proxy segmentation model on this synthetic data. (Bottom) The Adaptation strategy converts unlabeled SEM images to match the TEM data distribution, enabling segmentation with a pre- trained model.
+</div>
+
+<p>These strategies were rigorously tested across three distinct image domains that varied significantly in similarity to the labeled data, evaluating their adaptability and effectiveness under various conditions.</p>
+
+<h3 id="results">Results</h3>
+
+<div class="row text-center">
+    <div class="col-sm mt-3 mt-md-0">
+        <picture>
+    
+    <source media="(max-width: 480px)" srcset="/assets/resized/results_translation-480x312.png"></source>
+    
+    <source media="(max-width: 800px)" srcset="/assets/resized/results_translation-800x520.png"></source>
+    
+    <source media="(max-width: 1400px)" srcset="/assets/resized/results_translation-1400x911.png"></source>
+    
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/results_translation.png" title="example image">
+</picture>
+
+    </div>
+</div>
+<div class="caption">
+    (Top) Image translation examples. (Bottom) Unsupervised translation recon- struction losses: Structural Similarity Index Measure (SSIM), Peak Signal-to-Noise Ratio (PSNR) and L1. The error bars represent the standard deviations among the validation images.
+</div>
+
+<div class="row text-center">
+    <div class="col-sm mt-3 mt-md-0">
+        <picture>
+    
+    <source media="(max-width: 480px)" srcset="/assets/resized/result_segmentation_modality-480x362.png"></source>
+    
+    <source media="(max-width: 800px)" srcset="/assets/resized/result_segmentation_modality-800x603.png"></source>
+    
+    <source media="(max-width: 1400px)" srcset="/assets/resized/result_segmentation_modality-1400x1055.png"></source>
+    
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/result_segmentation_modality.png" title="example image">
+</picture>
+
+    </div>
+</div>
+<div class="caption">
+    Pseudo labeling results. (Top) Original and translated image alongside the pre-trained model prediction and pseudo labels. (Bottom) Dice scores under 5-fold cross-validation.
+</div>
+
+<p>Our findings, as detailed in the paper, underscore the potential of our methods to significantly alleviate the issue of data scarcity in medical image segmentation:</p>
+<ul>
+  <li>
+<strong>SEM Dataset</strong>: The tutorship strategy achieved a mean Dice score of 0.736, demonstrating its efficacy in generating useful pseudo labels for SEM images, which are typically difficult to annotate due to their unique properties.</li>
+  <li>
+<strong>Performance Across Domains</strong>: While the adaptation strategy is more suited to settings with minimal domain shifts, the tutorship approach excels in more challenging environments, making it a robust solution for significant modality differences.</li>
+</ul>
+
+<p>This project not only provides a viable solution to the lack of annotated medical imaging data in different modalities but also paves the way for more effective and efficient medical research and diagnostics by leveraging existing annotations more broadly.</p>
+
+<p>For more details, check out the <a href="https://www.arxiv.org/abs/2412.02858" target="_blank" rel="noopener noreferrer">paper</a> and the code in our <a href="https://github.com/axondeepseg/AxonDeepSynth" target="_blank" rel="noopener noreferrer"> repository </a>.</p>
 
   </article>
 
