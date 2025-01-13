@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /publications/
-title: Publications
+title: Patents & Publications
 description: 
 years: [2024,2022] #[1956, 1950, 1935, 1905]
 nav: true
